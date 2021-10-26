@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CountCat</string>
+    <string name = "hint_minute">分</string>
+    <string name = "message_minutes">分を入力してください... </string>
+</resources>

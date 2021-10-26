@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="#005980"
+        android:divider="?android:dividerHorizontal"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        android:weightSum="2">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                tools:context=".MainActivity">
+
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="14dp"
+                    android:gravity="center_horizontal"
+                    android:hint="Enter your teamA"
+                    android:theme="@style/EditTextColorControl"
+                    android:textColorHint="@color/colororange"
+                    android:textColor="@color/colororange"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/team_a_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:text="0"
+                    android:textColor="@color/colororange"
+                    android:textSize="56sp" />
+
+
+                <Button
+                    android:id="@+id/plusbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:onClick="addPoint"
+                    android:background="@drawable/frame_style"
+                    android:text="+"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:id="@+id/minusbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:onClick="addPoint"
+                    android:background="@drawable/frame_style"
+                    android:text="-"
+                    android:textSize="30sp" />
+
+
+                <NumberPicker
+                    android:id="@+id/numPicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:theme="@style/AppTheme.Picker"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                tools:context=".MainActivity">
+
+
+                <EditText
+                    android:id="@+id/editTextB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginBottom="14dp"
+                    android:gravity="center_horizontal"
+                    android:hint="Enter your teamB"
+                    android:theme="@style/EditTextColorControl"
+                    android:textColorHint="@color/colororange"
+                    android:textColor="@color/colororange"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/team_b_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:text="0"
+                    android:textColor="@color/colororange"
+                    android:textSize="56sp" />
+
+                <Button
+                    android:id="@+id/plusbuttonB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:onClick="addPoint"
+                    android:background="@drawable/frame_style"
+                    android:text="+"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:id="@+id/minusbuttonB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:onClick="addPoint"
+                    android:background="@drawable/frame_style"
+                    android:text="-"
+                    android:textSize="30sp" />
+
+                <NumberPicker
+                    android:id="@+id/numPickerB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:theme="@style/AppTheme.Picker"
+                    />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        >
+
+
+        <ProgressBar
+            android:id="@+id/progressBarCircle"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:background="@drawable/drawable_circle_dark_blue"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/drawable_circle_yellow"
+            android:rotation="0" />
+
+        <EditText
+            android:id="@+id/editTextMinute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/textViewTime"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:hint="@string/hint_minute"
+            android:inputType="number"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:minEms="5"
+            android:text="1"
+            android:textColor="@color/colororange"
+            android:textColorHint="@color/colorYellow" />
+
+        <TextView
+            android:id="@+id/textViewTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/blank"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="00:01:00"
+            android:textColor="@color/colororange"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/blank"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:textSize="30sp" />
+
+
+    <ImageView
+        android:id="@+id/imageViewReset"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/editTextMinute"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:tint="@color/colororange"
+        android:src="@drawable/ic_baseline_autorenew_24"
+        android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageViewStop"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/textViewTime"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:tint="@color/colororange"
+            android:src="@drawable/ic_baseline_stop_24"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/imageViewStartStop"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/progressBarCircle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:tint="@color/colororange"
+            android:src="@drawable/ic_baseline_arrow_right_24" />
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="121dp"
+        android:onClick="resetScore"
+        android:background="@drawable/frame_style"
+        android:text="Reset" />
+</RelativeLayout>
